@@ -9,14 +9,12 @@ void Train::addCage(bool light) {
     git->next = nullptr;
     if (first == nullptr) {
         first = git;
-    }
-    else if (first->next == nullptr) {
+    } else if (first->next == nullptr) {
         first->next = git;
         git->prev = first;
         first->prev = git;
         git->next = first;
-    }
-    else {
+    } else {
         first->prev->next = git;
         git->prev = first->prev;
         first->prev = git;
@@ -40,8 +38,7 @@ int Train::getLength() {
                 value = value->prev;
                 countOp += 1;
             }
-        }
-        else {
+        } else {
             while (!value->light) {
                 rose += 1;
                 value = value->next;
